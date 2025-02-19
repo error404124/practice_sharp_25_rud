@@ -11,9 +11,13 @@ public class Benford
         
         foreach (var word in words)
         {
-            if (word[0] >= '0' && word[0] <= '9')
+            foreach (var symbol in word)
             {
-                statistics[word[0] - '0']++;
+                if (symbol >= '0' && symbol <= '9')
+                {
+                    statistics[symbol - '0']++;
+                    break;
+                }
             }
         }
         return statistics;
