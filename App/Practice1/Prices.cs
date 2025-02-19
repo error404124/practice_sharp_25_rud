@@ -8,35 +8,38 @@ public static class Prices
         var lastDigit = price % 10;
         var lastTwoDigits = price % 100;
 
+        if (isFirstCapital)
+            q = "Р";
+
+        else
+            q = "р";
+
+        if (isShorNotation)
+        {
+            q += "уб.";
+            return q;
+        }
+
+
         if (lastTwoDigits >= 11 && lastTwoDigits <= 14)
-            q = "рублей";
+            q += "ублей";
 
         else
         {
             switch (lastDigit)
             {
                 case 1:
-                    q = "рубль";
+                    q += "убль";
                     break;
                 case 2:
                 case 3:
                 case 4:
-                    q = "рубля";
+                    q += "убля";
                     break;
                 default:
-                    q = "рублей";
+                    q += "ублей";
                     break;
             }
-        }
-
-        if (isShorNotation)
-        {
-            q = "руб.";
-        }
-
-        if (isFirstCapital)
-        {
-            q = char.ToUpper(q[0]) + q[1..];
         }
 
         return q;
