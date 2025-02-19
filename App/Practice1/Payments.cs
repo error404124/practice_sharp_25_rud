@@ -10,7 +10,7 @@ public class Payments
 {
     public static decimal CalculateTotalPayments(PaymentsPlan plan, decimal rate, int monthsCount, decimal amount)
     {
-        var rate_month = rate / (12 * 100);
+        var rateMonth = rate / (12 * 100);
 
         if (rate == 0)
         {
@@ -20,19 +20,19 @@ public class Payments
         if (plan == PaymentsPlan.Differentiated)
         {
             decimal total = 0;
-            decimal P = amount / monthsCount;
+            var p = amount / monthsCount;
 
             for (int month = 1; month <= monthsCount; month++)
             {
-                total += P + (amount - P * (month - 1)) * rate_month;
+                total += p + (amount - p * (month - 1)) * rateMonth;
             }
 
-            return (int)total;
+            return total;
         }
 
-        var payment_per_month = amount * rate_month * (decimal)Math.Pow(1 + (double)rate_month, monthsCount) /
-                                ((decimal)Math.Pow(1 + (double)rate_month, monthsCount) - 1);
+        var paymentPerMonth = amount * rateMonth * (decimal)Math.Pow(1 + (double)rateMonth, monthsCount) /
+                                ((decimal)Math.Pow(1 + (double)rateMonth, monthsCount) - 1);
 
-        return payment_per_month * monthsCount;
+        return paymentPerMonth * monthsCount;
     }
 }

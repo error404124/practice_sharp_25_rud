@@ -8,11 +8,7 @@ public static class Prices
         var lastDigit = price % 10;
         var lastTwoDigits = price % 100;
 
-        if (isFirstCapital)
-            q = "Р";
-
-        else
-            q = "р";
+        q = isFirstCapital ? "Р" : "р";
 
         if (isShorNotation)
         {
@@ -20,10 +16,10 @@ public static class Prices
             return q;
         }
 
-
         if (lastTwoDigits >= 11 && lastTwoDigits <= 14)
+        {
             q += "ублей";
-
+        }
         else
         {
             switch (lastDigit)
