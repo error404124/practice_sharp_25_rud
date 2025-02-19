@@ -26,7 +26,7 @@ public class Requesite
                     second += int.Parse(inn[i].ToString()) * innArraySecond[i];
                 }
 
-                int tmpSecond = (second % 11) % 10;
+                int tmpSecond = second % 11 % 10;
 
                 if (tmpSecond == int.Parse(inn[11].ToString()))
                 {
@@ -47,7 +47,7 @@ public class Requesite
                 sum += int.Parse(inn[i].ToString()) * innArray[i];
             }
 
-            int tmp = (sum % 11) % 10;
+            int tmp = sum % 11 % 10;
 
             if (tmp == int.Parse(inn[9].ToString()))
             {
