@@ -33,6 +33,6 @@ public class Payments
         var payment_per_month = amount * rate_month * (decimal)Math.Pow(1 + (double)rate_month, monthsCount) /
                                 ((decimal)Math.Pow(1 + (double)rate_month, monthsCount) - 1);
 
-        return payment_per_month * monthsCount * 100 / 100;
+        return payment_per_month * monthsCount;
     }
 }
