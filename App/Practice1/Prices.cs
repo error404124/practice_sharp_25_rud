@@ -36,7 +36,7 @@ public static class Prices
 
         if (isFirstCapital)
         {
-            q = "Р" + q.Substring(1);
+            q = char.ToUpper(q[0]) + q[1..];
         }
 
         return q;
