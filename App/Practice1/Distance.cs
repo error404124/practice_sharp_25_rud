@@ -8,36 +8,36 @@ public static class Distance
         // отрезок
         double x1, double y1, double x2, double y2)
     {
-        var AB_x = x2 - x1;
-        var AB_y = y2 - y1;
-        var AC_x = x - x1;
-        var AC_y = y - y1;
-        var BC_x = x - x2;
-        var BC_y = y - y2;
-        var AB_len = AB_x * AB_x + AB_y * AB_y;
+        var abX = x2 - x1;
+        var abY = y2 - y1;
+        var acX = x - x1;
+        var acY = y - y1;
+        var bcX = x - x2;
+        var bcY = y - y2;
+        var abLen = abX * abX + abY * abY;
 
-        if (AB_len == 0)
+        if (abLen == 0)
         {
-            return Math.Sqrt(AC_x * AC_x + AC_y * AC_y);
+            return Math.Sqrt(acX * acX + acY * acY);
         }
 
-        var scalar_product = AC_x * AB_x + AC_y * AB_y;
-        var t = scalar_product / AB_len;
+        var scalarProduct = acX * abX + acY * abY;
+        var t = scalarProduct / abLen;
 
         if (t < 0)
         {
-            return Math.Sqrt(AC_x * AC_x + AC_y * AC_y);
+            return Math.Sqrt(acX * acX + acY * acY);
         }
 
         if (t > 1)
         {
-            return Math.Sqrt(BC_x * BC_x + BC_y * BC_y);
+            return Math.Sqrt(bcX * bcX + bcY * bcY);
         }
 
-        var C_x = x1 + t * AB_x;
-        var C_y = y1 + t * AB_y;
-        var D_x = x - C_x;
-        var D_y = y - C_y;
-        return Math.Sqrt(D_x * D_x + D_y * D_y);
+        var cX = x1 + t * abX;
+        var cY = y1 + t * abY;
+        var dX = x - cX;
+        var dY = y - cY;
+        return Math.Sqrt(dX * dX + dY * dY);
     }
 }
