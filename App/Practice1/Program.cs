@@ -1,36 +1,60 @@
-﻿namespace App;
+﻿using System.Reflection.Metadata;
+using App.Practice2;
+
+namespace App;
+
+public class User
+{
+    private string name;
+    private string inn;
+    private int age;
+
+
+    public string Inn
+    {
+        get { return inn; }
+        set
+        {
+            if (!Requesite.isValidInn(value))
+            {
+                throw new ArgumentException("Invalid Inn");
+            }
+
+            inn = value;
+        }
+    }
+
+    public int Age
+    {
+        get { return age; }
+        set
+        {
+            if (value < 0 || value > 100)
+            {
+                throw new ArgumentException("Invalid Age");
+            }
+
+            age = value;
+        }
+    }
+
+    public User()
+    {
+    }
+
+    public User(string name)
+    {
+        this.Inn = inn;
+        this.Age = age;
+        this.name = name;
+    }
+}
 
 public static class Program
 {
-
-    public static List<char> FindDuplicates(string text)
-    {
-        var answer = new List<char>();
-        var dict = new Dictionary<char, int>();
-
-        for (int i = 0; i < text.Length; i++)
-        {
-            dict.TryAdd(text[i], 0);
-            dict[text[i]]++;
-        }
-
-        foreach (var pair in dict)
-        {
-            if (pair.Value > 1)
-            {
-                answer.Add(pair.Key);
-            }
-        }
-        return answer;
-    }
-    
     public static void Main()
     {
-        var answer = FindDuplicates("aabbqwecc");
-        for (int i = 0; i < answer.Count; i++)
-        {
-            Console.WriteLine(answer[i]);
-        }
-
+        var user = new User();
+        user.Inn = "9153885730";
     }
 }

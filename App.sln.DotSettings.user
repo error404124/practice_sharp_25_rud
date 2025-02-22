@@ -6,6 +6,7 @@
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.PaymentsTests&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test2.BenfordTest&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.LeapYearTests&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test2.PhoneNumberTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a2b493e4_002D6da7_002D42d5_002Dbc5a_002D06fcbe5df98a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="DistanceTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
