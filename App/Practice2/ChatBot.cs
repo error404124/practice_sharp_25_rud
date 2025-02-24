@@ -10,6 +10,11 @@ public class ChatBot
 
     public static string CalculateString(string[] codeLines)
     {
+        if (codeLines.Length == 0)
+        {
+            return null;
+        }
+
         var stack = new Stack<char>();
         foreach (var line in codeLines)
         {
