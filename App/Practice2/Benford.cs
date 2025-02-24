@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace App.Practice2;
 
 public class Benford
@@ -6,9 +8,8 @@ public class Benford
     {
         var statistics = new int[10];
 
-        var words = text.Split(new char[] { ' ', '\t', '\n', '\r', ',', '.', ';', '!', '?' },
-            StringSplitOptions.RemoveEmptyEntries);
-        
+        var words = Regex.Split(text, @"[^0-9a-zA-Z]+");
+
         foreach (var word in words)
         {
             foreach (var symbol in word)
@@ -20,6 +21,7 @@ public class Benford
                 }
             }
         }
+
         return statistics;
     }
 }
