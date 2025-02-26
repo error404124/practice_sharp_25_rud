@@ -6,6 +6,12 @@ public class PhoneNumber
 {
     public static bool TryParsePhone(string inputString, out string parsedPhone)
     {
+        if (inputString == "")
+        {
+            parsedPhone = null;
+            return false;
+        }
+
         var phoneNumbers = new StringBuilder();
         foreach (var symbol in inputString)
         {
@@ -21,7 +27,6 @@ public class PhoneNumber
             return false;
         }
 
-        phoneNumbers[0] = '7';
         parsedPhone = phoneNumbers.ToString();
         return true;
     }

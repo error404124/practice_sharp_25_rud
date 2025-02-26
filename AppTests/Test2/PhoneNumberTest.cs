@@ -9,6 +9,7 @@ public class PhoneNumberTest
     [TestCase("перезвонить по номеру 89833136827 завтра", null, true)]
     [TestCase("перез +234890 epfk;lwds", null, false)]
     [TestCase("8(983)-313-68-27", null, true)]
+    [TestCase("", null, false)]
     
     public void TestPhoneNumber(string phoneNumber, out string parsedPhone, bool expected)
     {
