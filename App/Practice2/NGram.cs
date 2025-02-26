@@ -1,3 +1,4 @@
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace App.Practice2;
@@ -6,7 +7,15 @@ public class NGram
 {
     public static Dictionary<string, string> FrequencyAnalysis(string inputString)
     {
-        var str = Regex.Replace(inputString, "[^a-zA-Zа-яА-Я.]", "");
+        var strBuilder = new StringBuilder(inputString.Length);
+        foreach (var c in inputString)
+        {
+            if (char.IsLetter(c) || c == '.')
+            {
+                strBuilder.Append(c);
+            }
+        }
+        var str = strBuilder.ToString();
         var dict = new Dictionary<string, string>(StringComparer.Ordinal);
         var parseInputString = str.Split('.', StringSplitOptions.RemoveEmptyEntries);
 
