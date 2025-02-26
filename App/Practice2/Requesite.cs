@@ -2,35 +2,13 @@ namespace App.Practice2;
 
 public class Requesite
 {
-    private static int ScalarDot(string inn, string numberName)
+    private static int ScalarDot(string inn, int[] innArray)
     {
         var number = 0;
 
-        if (inn.Length == 10)
+        for (var i = 0; i < innArray.Length; i++)
         {
-            int[] innArray = { 2, 4, 10, 3, 5, 9, 4, 6, 8 };
-            for (var i = 0; i < 9; i++)
-            {
-                number += int.Parse(inn[i].ToString()) * innArray[i];
-            }
-        }
-
-        else if (numberName == "first")
-        {
-            int[] innArrayFirst = { 7, 2, 4, 10, 3, 5, 9, 4, 6, 8 };
-            for (var i = 0; i < 10; ++i)
-            {
-                number += int.Parse(inn[i].ToString()) * innArrayFirst[i];
-            }
-        }
-
-        else if (numberName == "second")
-        {
-            int[] innArraySecond = { 3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8 };
-            for (var i = 0; i < 11; ++i)
-            {
-                number += int.Parse(inn[i].ToString()) * innArraySecond[i];
-            }
+            number += int.Parse(inn[i].ToString()) * innArray[i];
         }
 
         return (number % 11) % 10;
@@ -40,14 +18,14 @@ public class Requesite
     {
         if (inn.Length == 12)
         {
-            var firstNumber = ScalarDot(inn, "first");
+            int[] innArrayFirst = { 7, 2, 4, 10, 3, 5, 9, 4, 6, 8 };
+            int[] innArraySecond = { 3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8 };
+
+            var firstNumber = ScalarDot(inn, innArrayFirst);
             if (firstNumber == int.Parse(inn[10].ToString()))
             {
-                var secondNumber = ScalarDot(inn, "second");
-                if (secondNumber == int.Parse(inn[11].ToString()))
-                {
-                    return true;
-                }
+                var secondNumber = ScalarDot(inn, innArraySecond);
+                return secondNumber == int.Parse(inn[11].ToString());
             }
 
             return false;
@@ -55,13 +33,9 @@ public class Requesite
 
         if (inn.Length == 10)
         {
-            var firstNumber = ScalarDot(inn, null);
-            if (firstNumber == int.Parse(inn[9].ToString()))
-            {
-                return true;
-            }
-
-            return false;
+            int[] innArray = { 2, 4, 10, 3, 5, 9, 4, 6, 8 };
+            var firstNumber = ScalarDot(inn, innArray);
+            return firstNumber == int.Parse(inn[9].ToString());
         }
 
         return false;
