@@ -37,6 +37,11 @@ public class ChatBot
             }
         }
 
+        if (stack.Count == 0)
+        {
+            return null;
+        }
+
         stack.Pop();
         var answer = string.Join("", stack.Reverse());
         return answer;

@@ -5,7 +5,7 @@ namespace AppTests.Test2;
 public class ChatBotTest
 {
     [TestCase(new string[]
-        { }, null)]
+        { "pop 0" }, null)]
     public void TestCalculateString(string[] input, string expected)
     {
         var actual = ChatBot.CalculateString(input);
