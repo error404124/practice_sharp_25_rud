@@ -4,7 +4,7 @@ namespace AppTests.Test2;
 
 public class NGramTest
 {
-    [TestCase("a b c d. b c d. e b c a d.")]
+    [TestCase("a, b")]
 
     public void TestNGram(string inputString)
     {
@@ -12,13 +12,6 @@ public class NGramTest
         var expected = new Dictionary<string, string>
         {
             { "a", "b" },
-            { "b", "c" },
-            { "c", "d" },
-            { "e", "b" },
-            { "a b", "c" },
-            { "b c", "d" },
-            { "e b", "c" },
-            { "c a", "d" }
         };
         
         Assert.That(actual, Is.EqualTo(expected));

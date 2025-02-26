@@ -1,16 +1,18 @@
+using System.Text.RegularExpressions;
+
 namespace App.Practice2;
 
 public class NGram
 {
     public static Dictionary<string, string> FrequencyAnalysis(string inputString)
     {
-        inputString = inputString.Replace(" ", "");
+        var str = Regex.Replace(inputString, "[^a-zA-Zа-яА-Я.]", "");
         var dict = new Dictionary<string, string>(StringComparer.Ordinal);
-        var parseInputString = inputString.Split('.', StringSplitOptions.RemoveEmptyEntries);
+        var parseInputString = str.Split('.', StringSplitOptions.RemoveEmptyEntries);
 
         foreach (var parseInput in parseInputString)
         {
-            for (int i = 0; i < parseInput.Length - 1; i++)
+            for (var i = 0; i < parseInput.Length - 1; i++)
             {
                 if (i < parseInput.Length - 2)
                 {
