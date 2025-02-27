@@ -8,13 +8,14 @@ public class NGram
     public static Dictionary<string, string> FrequencyAnalysis(string inputString)
     {
         var strBuilder = new StringBuilder(inputString.Length);
-        foreach (var c in inputString)
+        foreach (var c in inputString.ToLower())
         {
             if (char.IsLetter(c) || c == '.')
             {
                 strBuilder.Append(c);
             }
         }
+
         var str = strBuilder.ToString();
         var dict = new Dictionary<string, string>(StringComparer.Ordinal);
         var parseInputString = str.Split('.', StringSplitOptions.RemoveEmptyEntries);
@@ -34,7 +35,7 @@ public class NGram
                 }
             }
         }
-        
+
         return dict;
     }
 }
