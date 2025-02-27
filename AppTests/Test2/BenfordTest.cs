@@ -8,6 +8,8 @@ public class BenfordTest
     [TestCase("912, 93cdks1 a4gb92", new[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 2})]
     [TestCase("ANkla4lqsdo 5tdaf", new[] {0, 0, 0, 0, 0, 1, 0, 0, 0, 0})]
     [TestCase("abc123 123de", new[] {0, 1, 0, 0, 0, 0, 0, 0, 0, 0})]
+    [TestCase("", new[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0})]
+    [TestCase(null, new[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0})]
     public void TestBenford(string text, int[] expected)
     {
         var actual =  Benford.GetBenfordStatistics(text);

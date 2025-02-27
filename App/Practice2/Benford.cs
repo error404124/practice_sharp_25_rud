@@ -6,6 +6,10 @@ public class Benford
 {
     public static int[] GetBenfordStatistics(string text)
     {
+        if (string.IsNullOrEmpty(text))
+        {
+            return new int[10];
+        }
         var statistics = new int[10];
 
         var words = Regex.Split(text, @"[^0-9a-zA-Z]+");
