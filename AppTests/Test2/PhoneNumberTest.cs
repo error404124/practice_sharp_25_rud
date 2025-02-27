@@ -10,7 +10,7 @@ public class PhoneNumberTest
     [TestCase("перез +234890 epfk;lwds", null, false)]
     [TestCase("8(983)-313-68-27", null, true)]
     [TestCase("", null, false)]
-    
+    [TestCase("19833136827", null, false)]
     public void TestPhoneNumber(string phoneNumber, out string parsedPhone, bool expected)
     {
         var actual = PhoneNumber.TryParsePhone(phoneNumber, out parsedPhone);

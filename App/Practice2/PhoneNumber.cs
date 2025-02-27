@@ -21,11 +21,12 @@ public class PhoneNumber
             }
         }
 
-        if (phoneNumbers.Length != 11 && (phoneNumbers[0] != 8 || phoneNumbers[0] != 7))
+        if (phoneNumbers.Length != 11 || (phoneNumbers[0] != '8' && phoneNumbers[0] != '7'))
         {
             parsedPhone = null;
             return false;
         }
+
 
         parsedPhone = phoneNumbers.ToString();
         return true;
