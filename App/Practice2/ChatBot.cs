@@ -42,7 +42,10 @@ public class ChatBot
             return null;
         }
 
-        stack.Pop();
+        if (stack.Peek() == ' ')
+        {
+            stack.Pop();
+        }
         var answer = string.Join("", stack.Reverse());
         return answer;
     }
