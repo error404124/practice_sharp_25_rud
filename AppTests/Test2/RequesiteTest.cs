@@ -16,7 +16,7 @@ public class RequesiteTest
     
     public void TestisValidInn(string inn, bool expected)
     {
-        var actual = Requesite.isValidInn(inn);
+        var actual = Requesite.IsValidInn(inn);
         Assert.That(actual, Is.EqualTo(expected));
     }
 }

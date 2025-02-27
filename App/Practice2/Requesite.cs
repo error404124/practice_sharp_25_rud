@@ -14,7 +14,7 @@ public class Requesite
         return (number % 11) % 10;
     }
 
-    public static bool isValidInn(string inn)
+    public static bool IsValidInn(string inn)
     {
         if (inn.Length == 12)
         {
