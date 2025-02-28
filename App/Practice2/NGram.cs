@@ -10,28 +10,29 @@ public class NGram
         var strBuilder = new StringBuilder(inputString.Length);
         foreach (var c in inputString.ToLower())
         {
-            if (char.IsLetter(c) || c == '.')
+            if (char.IsLetter(c) || c == ' ' || c == '.')
             {
                 strBuilder.Append(c);
             }
         }
-
         var str = strBuilder.ToString();
         var dict = new Dictionary<string, string>(StringComparer.Ordinal);
         var parseInputString = str.Split('.', StringSplitOptions.RemoveEmptyEntries);
 
         foreach (var parseInput in parseInputString)
         {
-            for (var i = 0; i < parseInput.Length - 1; i++)
+            var words = parseInput.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            
+            for (var i = 0; i < words.Length - 1; i++)
             {
-                if (i < parseInput.Length - 2)
+                if (i < words.Length - 2)
                 {
-                    dict.TryAdd($"{parseInput[i]} {parseInput[i + 1]}", $"{parseInput[i + 2]}");
+                    dict.TryAdd($"{words[i]} {words[i + 1]}", $"{words[i + 2]}");
                 }
 
-                if (i < parseInput.Length - 1)
+                if (i < words.Length - 1)
                 {
-                    dict.TryAdd($"{parseInput[i]}", $"{parseInput[i + 1]}");
+                    dict.TryAdd($"{words[i]}", $"{words[i + 1]}");
                 }
             }
         }
