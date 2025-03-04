@@ -10,11 +10,11 @@ public class NGramTest
         var actual = NGram.FrequencyAnalysis(inputString);
         var expected = new Dictionary<string, string>
         {
-            { "she stood", "up" },
-            { "she", "left" },
             { "stood", "up" },
+            { "then", "she" },
+            { "she", "left" },
+            { "she stood", "up" },
             { "then she", "left" },
-            { "then", "she" }
         };
 
         Assert.That(actual, Is.EqualTo(expected));

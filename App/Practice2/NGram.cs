@@ -39,11 +39,29 @@ public class NGram
             }
         }
 
-        nGramsList.Sort();
+        var freqDict = new Dictionary<string, int>();
 
         foreach (var nGram in nGramsList)
         {
-            var words = nGram.Split(' ');
+            if (freqDict.ContainsKey(nGram))
+            {
+                freqDict[nGram]++;
+            }
+            else
+            {
+                freqDict.Add(nGram, 1);
+            }
+        }
+
+        var sortedList = freqDict
+            .OrderByDescending(x => x.Value)
+            .ThenBy(x => x.Key)
+            .ToList();
+
+
+        foreach (var pair in sortedList)
+        {
+            var words = pair.Key.Split(' ');
             if (words.Length == 2)
             {
                 dict.TryAdd(words[0], words[1]);
