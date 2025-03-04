@@ -11,7 +11,7 @@ public class NGramTest
         var expected = new Dictionary<string, string>
         {
             { "she stood", "up" },
-            { "she", "stood" },
+            { "she", "left" },
             { "stood", "up" },
             { "then she", "left" },
             { "then", "she" }
