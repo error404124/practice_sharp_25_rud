@@ -17,14 +17,13 @@ public static class UserCreator
         var hash = md5.ComputeHash(passwordBytes);
         return BitConverter.ToString(hash).Replace("-", "").ToLower();
     }
-
 }
 
 public class User
 {
     private readonly Guid id;
     private readonly string login;
-    private readonly string password;
+    private readonly string passwordHash;
     private readonly string name;
     private readonly string surname;
     private readonly string inn;
@@ -40,7 +39,7 @@ public class User
 
     public string Password
     {
-        get { return password; }
+        get { return passwordHash; }
         init { }
     }
 
@@ -83,12 +82,12 @@ public class User
         get { return registerDate; }
     }
 
-    public User(string login, string password, string name, string surname, string inn, string phone)
+    public User(string login, string hash, string name, string surname, string inn, string phone)
     {
         id = Guid.NewGuid();
         registerDate = DateTime.Now;
+        passwordHash = hash;
         this.login = login;
-        this.password = password;
         this.name = name;
         this.surname = surname;
 
