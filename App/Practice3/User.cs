@@ -2,11 +2,29 @@ using App.Practice2;
 
 namespace App.Practice3;
 
+public static class UserCreator
+{
+    public static User CreateUser(string login, string password, string name, string surname, string inn, string phone)
+    {
+        var passwordHash = CreateMd5(password);
+        return new User(login, passwordHash, name, surname, inn, phone);
+    }
+
+    private static string CreateMd5(string password)
+    {
+        var md5 = System.Security.Cryptography.MD5.Create();
+        var passwordBytes = System.Text.Encoding.ASCII.GetBytes(password);
+        var hash = md5.ComputeHash(passwordBytes);
+        return BitConverter.ToString(hash).Replace("-", "").ToLower();
+    }
+
+}
+
 public class User
 {
-    public readonly Guid Id;
-    private string login;
-    private string password;
+    private readonly Guid id;
+    private readonly string login;
+    private readonly string password;
     private readonly string name;
     private readonly string surname;
     private readonly string inn;
@@ -17,28 +35,37 @@ public class User
     public string Login
     {
         get { return login; }
-        set { login = value; }
+        init { }
     }
 
     public string Password
     {
         get { return password; }
-        set { password = value; }
+        init { }
     }
 
     public string Phone
     {
         get { return phone; }
+        set
+        {
+            if (TryUpdatePhone(value))
+            {
+                phone = value;
+            }
+
+            throw new ArgumentException("Телефон некорректен.");
+        }
     }
 
     public string Inn
     {
         get { return inn; }
     }
-    
+
     public Guid ID
     {
-        get { return Id; }
+        get { return id; }
     }
 
     public string Name
@@ -58,7 +85,7 @@ public class User
 
     public User(string login, string password, string name, string surname, string inn, string phone)
     {
-        Id = Guid.NewGuid();
+        id = Guid.NewGuid();
         registerDate = DateTime.Now;
         this.login = login;
         this.password = password;
@@ -84,6 +111,12 @@ public class User
         }
     }
 
+    public User()
+    {
+        id = Guid.NewGuid();
+        registerDate = DateTime.Now;
+    }
+
     public string GetUserFullName()
     {
         return $"{surname} {name}";
@@ -99,7 +132,7 @@ public class User
         return false;
     }
 
-    public bool TryUpdatePhone(string phone)
+    private bool TryUpdatePhone(string phone)
     {
         if (IsPhoneValid(phone))
         {

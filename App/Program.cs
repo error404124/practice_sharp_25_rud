@@ -133,12 +133,5 @@ public static class Program
 {
     public static void Main()
     {
-        User first = new User("1234", "1234", "Joe", "Biden", "9153885734", "+79833136827");
-        User second = new User("1234", "1234", "Boris", "Johnson", "2605245659", "+79899999999");
-
-        first.TryUpdatePhone("89833136827");
-
-        Console.WriteLine(second.GetUserFullName());
-        Console.WriteLine(first.Phone);
     }
 }
