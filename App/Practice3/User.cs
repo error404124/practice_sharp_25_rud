@@ -15,7 +15,7 @@ public static class UserCreator
         var md5 = System.Security.Cryptography.MD5.Create();
         var passwordBytes = System.Text.Encoding.ASCII.GetBytes(password);
         var hash = md5.ComputeHash(passwordBytes);
-        return BitConverter.ToString(hash).Replace("-", "").ToLower();
+        return BitConverter.ToString(hash);
     }
 }
 
@@ -34,13 +34,13 @@ public class User
     public string Login
     {
         get { return login; }
-        init { }
+        init { login = value; }
     }
 
-    public string Password
+    public string PasswordHash
     {
         get { return passwordHash; }
-        init { }
+        init { passwordHash = value; }
     }
 
     public string Phone
@@ -52,8 +52,10 @@ public class User
             {
                 phone = value;
             }
-
-            throw new ArgumentException("Телефон некорректен.");
+            else
+            {
+                throw new ArgumentException("Телефон некорректен.");
+            }
         }
     }
 
@@ -62,7 +64,7 @@ public class User
         get { return inn; }
     }
 
-    public Guid ID
+    public Guid Id
     {
         get { return id; }
     }
@@ -90,15 +92,7 @@ public class User
         this.login = login;
         this.name = name;
         this.surname = surname;
-
-        if (IsPhoneValid(phone))
-        {
-            this.phone = phone;
-        }
-        else
-        {
-            throw new ArgumentException("Телефон некорректен.");
-        }
+        Phone = phone;
 
         if (Requesite.IsValidInn(inn))
         {
