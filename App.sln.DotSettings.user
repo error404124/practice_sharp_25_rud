@@ -12,6 +12,21 @@
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test2.ChatBotTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=590f2413_002D33fd_002D4d75_002Daeb7_002Dc6944555d168/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="RequesiteTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test2.RequesiteTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.UserTest.PhoneTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.UserTest.PhoneTest2&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.UserTest.PhoneTest3&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.UserTest.PhoneTest4&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.UserTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test4.FigureTest.TriangleTest1&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test4.FigureTest.TriangleTest2&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test4.FigureTest.RectangleTest1&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test4.FigureTest.RectangleTest2&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test4.FigureTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a2b493e4_002D6da7_002D42d5_002Dbc5a_002D06fcbe5df98a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="DistanceTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.DistanceTests&lt;/TestId&gt;
