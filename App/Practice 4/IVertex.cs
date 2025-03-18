@@ -20,6 +20,6 @@ public class Vertex : IVertex
 
     public override string ToString()
     {
-        return $"({X:F3}, {Y:F3})";
+        return $"(x = {X:F3}, y = {Y:F3})";
     }
 }

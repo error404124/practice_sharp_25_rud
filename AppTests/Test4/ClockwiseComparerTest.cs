@@ -91,7 +91,7 @@ public class ClockwiseComparerTest
         
         var expected = v.ToString();
         
-        Assert.AreEqual(expected, "(1,000, 0,000)");
+        Assert.AreEqual(expected, "(x = 1,000, y = 0,000)");
     }
     
     [Test]
@@ -101,6 +101,6 @@ public class ClockwiseComparerTest
         
         var expected = v.ToString();
         
-        Assert.AreEqual(expected, "(-41,000, 10,000)");
+        Assert.AreEqual(expected, "(x = -41,000, y = 10,000)");
     }
 }
