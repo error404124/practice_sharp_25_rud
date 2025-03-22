@@ -9,9 +9,10 @@ public class ClockwiseComparer : IComparer<IVertex>
         {
             angle += 2 * Math.PI;
         }
+
         return angle;
     }
-    
+
     public int Compare(IVertex v1, IVertex v2)
     {
         if (v1 == null || v2 == null)
@@ -21,7 +22,7 @@ public class ClockwiseComparer : IComparer<IVertex>
 
         var angle1 = CustomAtan2(v1);
         var angle2 = CustomAtan2(v2);
-        
+
 
         if (angle1 < angle2) return 1;
         if (angle1 > angle2) return -1;
