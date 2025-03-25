@@ -13,14 +13,13 @@ public class Benchmark : IBenchmark
 
         task.Run();
 
-        Stopwatch stopWatch = new Stopwatch();
+        var stopWatch = new Stopwatch();
         stopWatch.Start();
         for (var i = 0; i < repetitionCount; i++)
         {
             task.Run();
         }
 
-        stopWatch.Stop();
         return stopWatch.Elapsed.TotalMilliseconds / repetitionCount;
     }
 }
@@ -28,6 +27,8 @@ public class Benchmark : IBenchmark
 public class StringBuilderTest : ITask
 {
     private int repetitionCount;
+    
+    public int RepetitionCount{get => repetitionCount; set => repetitionCount = value;}
 
     public StringBuilderTest()
     {
@@ -49,7 +50,8 @@ public class StringBuilderTest : ITask
 public class StringConstructorTest : ITask
 {
     private int repetitionCount;
-
+    public int RepetitionCount{get => repetitionCount; set => repetitionCount = value;}
+    
     public StringConstructorTest()
     {
     }
@@ -66,12 +68,20 @@ public class RealBenchmarkUsageSample
     [Test]
     public void StringConstructorFasterThanStringBuilder()
     {
-        var builder = new StringBuilderTest();
-        var constructor = new StringConstructorTest();
+        var repetitionCount = 100000;
+        var builder = new StringBuilderTest
+        {
+            RepetitionCount = repetitionCount
+        };
+        var constructor = new StringConstructorTest
+        {
+            RepetitionCount = repetitionCount
+        } ;
+        
         var benchmarkBuilder = new Benchmark();
         var benchmarkConstructor = new Benchmark();
 
-        Assert.Less(benchmarkConstructor.MeasureDurationInMs(constructor, 100000), 
-            benchmarkBuilder.MeasureDurationInMs(builder, 100000));
+        Assert.Less(benchmarkConstructor.MeasureDurationInMs(constructor, constructor.RepetitionCount), 
+            benchmarkBuilder.MeasureDurationInMs(builder, builder.RepetitionCount));
     }
 }
