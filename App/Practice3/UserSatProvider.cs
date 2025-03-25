@@ -2,7 +2,7 @@ namespace App.Practice3;
 
 public class UserSatProvider
 {
-    private List<UserActionItem> FilteredGroupTypeByData(
+    public static List<UserActionItem> FilteredGroupTypeByData(
         UserActionStatRequest request, List<UserActionItem> userActionItems)
     {
         var startDate = request.StartDate;
@@ -19,14 +19,17 @@ public class UserSatProvider
         return filteredUserActionItems;
     }
 
-    private DateTime FindPeriodKey(UserActionStatRequest request, UserActionItem userActionItem)
+    public static DateTime FindPeriodKey(UserActionStatRequest request, UserActionItem userActionItem)
     {
-        return request.DateGroupType == DateGroupTypes.Daily
-            ? userActionItem.Date.Date
-            : new DateTime(userActionItem.Date.Year, userActionItem.Date.Month, 1);
+        if (request.DateGroupType == DateGroupTypes.Daily)
+        {
+            return userActionItem.Date.Date;
+        }
+
+        return new DateTime(userActionItem.Date.Year, userActionItem.Date.Month, 1);
     }
 
-    private void AddToDictionary(
+    public static void AddToDictionary(
         UserActionItem userActionItem,
         DateTime periodKey,
         Dictionary<DateTime, Dictionary<ActionTypes, int>> actionDict)
@@ -40,40 +43,45 @@ public class UserSatProvider
         actionDict[periodKey][userActionItem.Action] += userActionItem.Count;
     }
 
-    private (Dictionary<DateTime, Dictionary<ActionTypes, int>> dailyDict,
-        Dictionary<DateTime, Dictionary<ActionTypes, int>> monthDict) GroupActionItems(UserActionStatRequest request,
-            List<UserActionItem> userActionItems)
+    public static Dictionary<DateTime, Dictionary<ActionTypes, int>> GroupActionItems(UserActionStatRequest request,
+        List<UserActionItem> userActionItems)
     {
         var filteredUserActionItems = FilteredGroupTypeByData(request, userActionItems);
 
-        var dailyDict = new Dictionary<DateTime, Dictionary<ActionTypes, int>>();
-        var monthDict = new Dictionary<DateTime, Dictionary<ActionTypes, int>>();
+        var selectedDict = new Dictionary<DateTime, Dictionary<ActionTypes, int>>();
         foreach (var userActionItem in filteredUserActionItems)
         {
             var periodKey = FindPeriodKey(request, userActionItem);
 
-            if (request.DateGroupType == DateGroupTypes.Daily)
-            {
-                AddToDictionary(userActionItem, periodKey, dailyDict);
-            }
-            else
-            {
-                AddToDictionary(userActionItem, periodKey, monthDict);
-            }
+            AddToDictionary(userActionItem, periodKey, selectedDict);
         }
 
-        return (dailyDict, monthDict);
+        return selectedDict;
     }
 
-    private UserActionStatItem CreateStatItem(KeyValuePair<DateTime, Dictionary<ActionTypes, int>> entry,
+    public static UserActionStatItem CreateStatItem(KeyValuePair<DateTime, Dictionary<ActionTypes, int>> entry,
         UserActionStatRequest request)
     {
         var statItem = new UserActionStatItem();
-
         statItem.StartDate = entry.Key;
-        statItem.EndDate = request.DateGroupType == DateGroupTypes.Daily
-            ? entry.Key
-            : new DateTime(entry.Key.Year, entry.Key.Month, DateTime.DaysInMonth(entry.Key.Year, entry.Key.Month));
+
+        if (request.DateGroupType == DateGroupTypes.Daily)
+        {
+            statItem.EndDate = entry.Key;
+        }
+
+        else
+        {
+            if (request.EndDate.Month == entry.Key.Month)
+                statItem.EndDate = request.EndDate;
+            else
+            {
+                var tmp = new DateTime(entry.Key.Year, entry.Key.Month, 1);
+                var lastDay = tmp.AddMonths(1).AddDays(-1);
+                statItem.EndDate = lastDay;
+            }
+        }
+
         statItem.ActionMetrics = entry.Value;
 
         return statItem;
@@ -82,9 +90,8 @@ public class UserSatProvider
 
     public UserActionStatResponse GetUserActionStat(UserActionStatRequest request, List<UserActionItem> userActionItems)
     {
-        var (dailyDict, monthDict) = GroupActionItems(request, userActionItems);
+        var selectedDict = GroupActionItems(request, userActionItems);
         var userActionStatItems = new List<UserActionStatItem>();
-        var selectedDict = request.DateGroupType == DateGroupTypes.Daily ? dailyDict : monthDict;
 
         foreach (var entry in selectedDict)
         {
