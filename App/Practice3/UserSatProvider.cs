@@ -72,7 +72,7 @@ public class UserSatProvider
 
         else
         {
-            if (request.EndDate.Month == entry.Key.Month)
+            if (entry.Key.Month == request.EndDate.Month && entry.Key.Year == request.EndDate.Year)
                 statItem.EndDate = request.EndDate;
             else
             {
