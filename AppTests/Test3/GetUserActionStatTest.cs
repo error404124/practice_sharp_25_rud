@@ -203,32 +203,32 @@ public class GetUserActionStatTest
         };
         var userActionItems = new List<UserActionItem>
         {
-            new UserActionItem { Date = new DateTime(2025, 1, 1), Action = ActionTypes.PayOrder, Count = 1 }
+            new() { Date = new DateTime(2025, 1, 1), Action = ActionTypes.PayOrder, Count = 1 }
         };
-        
-        var result = new  UserSatProvider().GetUserActionStat(request, userActionItems);
+
+        var result = new UserSatProvider().GetUserActionStat(request, userActionItems);
         Assert.That(result.UserActionStat.Count, Is.EqualTo(1));
         Assert.That(result.UserActionStat[0].StartDate, Is.EqualTo(new DateTime(2025, 1, 1)));
         Assert.That(result.UserActionStat[0].EndDate, Is.EqualTo(request.EndDate));
     }
-    
+
     [Test]
     public void GetUserActionStatTest5()
     {
         var request = new UserActionStatRequest
         {
-            StartDate = new DateTime(2024, 12, 15),
+            StartDate = new DateTime(2024, 12, 31),
             EndDate = new DateTime(2025, 1, 31),
             DateGroupType = DateGroupTypes.Monthly
         };
         var userActionItems = new List<UserActionItem>
         {
-            new UserActionItem { Date = new DateTime(2025, 1, 12), Action = ActionTypes.PayOrder, Count = 1 }
+            new() { Date = new DateTime(2025, 1, 5), Action = ActionTypes.PayOrder, Count = 1 }
         };
-        
-        var result = new  UserSatProvider().GetUserActionStat(request, userActionItems);
+
+        var result = new UserSatProvider().GetUserActionStat(request, userActionItems);
         Assert.That(result.UserActionStat.Count, Is.EqualTo(1));
         Assert.That(result.UserActionStat[0].StartDate, Is.EqualTo(new DateTime(2025, 1, 1)));
-        Assert.That(result.UserActionStat[0].EndDate, Is.EqualTo(request.EndDate));
+        Assert.That(result.UserActionStat[0].EndDate, Is.EqualTo(new DateTime(2025, 1, 31)));
     }
 }

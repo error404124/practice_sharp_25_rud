@@ -78,10 +78,6 @@ public class UserSatProvider
             {
                 var tmp = new DateTime(entry.Key.Year, entry.Key.Month, 1);
                 var lastDay = tmp.AddMonths(1).AddDays(-1);
-                if (lastDay.Year > entry.Key.Year)
-                {
-                    lastDay = new DateTime(entry.Key.Year, 12, 31);
-                }
                 statItem.EndDate = lastDay;
             }
         }
