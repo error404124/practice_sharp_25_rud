@@ -27,11 +27,16 @@ public class Benchmark : IBenchmark
 public class StringBuilderTest : ITask
 {
     private int repetitionCount;
-    
-    public int RepetitionCount{get => repetitionCount; set => repetitionCount = value;}
 
-    public StringBuilderTest()
+    public int RepetitionCount
     {
+        get => repetitionCount;
+        set => repetitionCount = value;
+    }
+
+    public StringBuilderTest(int repetitionCount)
+    {
+        this.repetitionCount = repetitionCount;
     }
 
     public void Run()
@@ -50,10 +55,16 @@ public class StringBuilderTest : ITask
 public class StringConstructorTest : ITask
 {
     private int repetitionCount;
-    public int RepetitionCount{get => repetitionCount; set => repetitionCount = value;}
-    
-    public StringConstructorTest()
+
+    public int RepetitionCount
     {
+        get => repetitionCount;
+        set => repetitionCount = value;
+    }
+
+    public StringConstructorTest(int repetitionCount)
+    {
+        this.repetitionCount = repetitionCount;
     }
 
     public void Run()
@@ -69,19 +80,13 @@ public class RealBenchmarkUsageSample
     public void StringConstructorFasterThanStringBuilder()
     {
         var repetitionCount = 100000;
-        var builder = new StringBuilderTest
-        {
-            RepetitionCount = repetitionCount
-        };
-        var constructor = new StringConstructorTest
-        {
-            RepetitionCount = repetitionCount
-        } ;
-        
+        var builder = new StringBuilderTest(repetitionCount);
+        var constructor = new StringConstructorTest(repetitionCount);
+
         var benchmarkBuilder = new Benchmark();
         var benchmarkConstructor = new Benchmark();
 
-        Assert.Less(benchmarkConstructor.MeasureDurationInMs(constructor, constructor.RepetitionCount), 
+        Assert.Less(benchmarkConstructor.MeasureDurationInMs(constructor, constructor.RepetitionCount),
             benchmarkBuilder.MeasureDurationInMs(builder, builder.RepetitionCount));
     }
 }
