@@ -2,7 +2,7 @@ namespace App.Practice3;
 
 public class UserSatProvider
 {
-    public static List<UserActionItem> FilteredGroupTypeByData(
+    private List<UserActionItem> FilteredGroupTypeByData(
         UserActionStatRequest request, List<UserActionItem> userActionItems)
     {
         var startDate = request.StartDate;
@@ -19,7 +19,7 @@ public class UserSatProvider
         return filteredUserActionItems;
     }
 
-    public static DateTime FindPeriodKey(UserActionStatRequest request, UserActionItem userActionItem)
+    private DateTime FindPeriodKey(UserActionStatRequest request, UserActionItem userActionItem)
     {
         if (request.DateGroupType == DateGroupTypes.Daily)
         {
@@ -29,7 +29,7 @@ public class UserSatProvider
         return new DateTime(userActionItem.Date.Year, userActionItem.Date.Month, 1);
     }
 
-    public static void AddToDictionary(
+    private void AddToDictionary(
         UserActionItem userActionItem,
         DateTime periodKey,
         Dictionary<DateTime, Dictionary<ActionTypes, int>> actionDict)
@@ -43,7 +43,7 @@ public class UserSatProvider
         actionDict[periodKey][userActionItem.Action] += userActionItem.Count;
     }
 
-    public static Dictionary<DateTime, Dictionary<ActionTypes, int>> GroupActionItems(UserActionStatRequest request,
+    private Dictionary<DateTime, Dictionary<ActionTypes, int>> GroupActionItems(UserActionStatRequest request,
         List<UserActionItem> userActionItems)
     {
         var filteredUserActionItems = FilteredGroupTypeByData(request, userActionItems);
@@ -59,7 +59,7 @@ public class UserSatProvider
         return selectedDict;
     }
 
-    public static UserActionStatItem CreateStatItem(KeyValuePair<DateTime, Dictionary<ActionTypes, int>> entry,
+    private UserActionStatItem CreateStatItem(KeyValuePair<DateTime, Dictionary<ActionTypes, int>> entry,
         UserActionStatRequest request)
     {
         var statItem = new UserActionStatItem();
