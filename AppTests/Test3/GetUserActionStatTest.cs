@@ -104,7 +104,7 @@ public class GetUserActionStatTest
         {
             new()
             {
-                StartDate = new DateTime(2024, 12, 1),
+                StartDate = new DateTime(2024, 12, 9),
                 EndDate = new DateTime(2024, 12, 31),
                 ActionMetrics = new Dictionary<ActionTypes, int>
                 {
@@ -197,19 +197,19 @@ public class GetUserActionStatTest
     {
         var request = new UserActionStatRequest
         {
-            StartDate = new DateTime(2024, 12, 15),
-            EndDate = new DateTime(2025, 1, 31),
+            StartDate = new DateTime(2024, 1, 15),
+            EndDate = new DateTime(2024, 12, 31),
             DateGroupType = DateGroupTypes.Monthly
         };
         var userActionItems = new List<UserActionItem>
         {
-            new() { Date = new DateTime(2025, 1, 1), Action = ActionTypes.PayOrder, Count = 1 }
+            new() { Date = new DateTime(2024, 1, 20), Action = ActionTypes.PayOrder, Count = 1 }
         };
 
         var result = new UserSatProvider().GetUserActionStat(request, userActionItems);
         Assert.That(result.UserActionStat.Count, Is.EqualTo(1));
-        Assert.That(result.UserActionStat[0].StartDate, Is.EqualTo(new DateTime(2025, 1, 1)));
-        Assert.That(result.UserActionStat[0].EndDate, Is.EqualTo(request.EndDate));
+        Assert.That(result.UserActionStat[0].StartDate, Is.EqualTo(new DateTime(2024, 1, 15)));
+        Assert.That(result.UserActionStat[0].EndDate, Is.EqualTo(new DateTime(2024, 1, 31)));
     }
 
     [Test]

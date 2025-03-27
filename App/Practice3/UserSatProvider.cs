@@ -63,27 +63,34 @@ public class UserSatProvider
         UserActionStatRequest request)
     {
         var statItem = new UserActionStatItem();
-        statItem.StartDate = entry.Key;
+
+        if (request.DateGroupType == DateGroupTypes.Monthly && request.StartDate.Year == entry.Key.Year &&
+            request.StartDate.Month == entry.Key.Month)
+        {
+            statItem.StartDate = request.StartDate;
+        }
+        else
+        {
+            statItem.StartDate = entry.Key;
+        }
 
         if (request.DateGroupType == DateGroupTypes.Daily)
         {
             statItem.EndDate = entry.Key;
         }
-
         else
         {
             if (entry.Key.Month == request.EndDate.Month && entry.Key.Year == request.EndDate.Year)
                 statItem.EndDate = request.EndDate;
             else
             {
-                var tmp = new DateTime(entry.Key.Year, entry.Key.Month, 1);
-                var lastDay = tmp.AddMonths(1).AddDays(-1);
+                var lastDay = new DateTime(entry.Key.Year, entry.Key.Month,
+                    DateTime.DaysInMonth(entry.Key.Year, entry.Key.Month));
                 statItem.EndDate = lastDay;
             }
         }
 
         statItem.ActionMetrics = entry.Value;
-
         return statItem;
     }
 

@@ -4,6 +4,8 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=37a67eab_002D2ce1_002D45ae_002Da74f_002Dd142d87de3d7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetUserActionStatTest3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.GetUserActionStatTest.GetUserActionStatTest3&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.GetUserActionStatTest.GetUserActionStatTest1&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.GetUserActionStatTest.GetUserActionStatTest5&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3d96f882_002Df0f3_002D4792_002Dacb1_002D373034705ae6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="PhoneTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
@@ -23,12 +25,12 @@
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.GetUserActionStatTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5325c0e0_002D582a_002D44eb_002D948d_002D122560598839/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetUserActionStatTest3 #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5325c0e0_002D582a_002D44eb_002D948d_002D122560598839/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetUserActionStatTest3 #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.GetUserActionStatTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=590f2413_002D33fd_002D4d75_002Daeb7_002Dc6944555d168/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="RequesiteTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=590f2413_002D33fd_002D4d75_002Daeb7_002Dc6944555d168/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="RequesiteTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test2.RequesiteTest&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.UserTest.PhoneTest&lt;/TestId&gt;
@@ -49,6 +51,9 @@
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.FindPeriodKeyTest.FindPeriodKeyTest1&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.FindPeriodKeyTest.FindPeriodKeyTestMonthly&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.AddToDictionaryTest.AddToDictionaryTest1&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.GetUserActionStatTest.GetUserActionStatTest5&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.GetUserActionStatTest.GetUserActionStatTest4&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.GetUserActionStatTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8e93ef2a_002D519a_002D45f3_002Db4f2_002D810010bf76a1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="PhoneTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
@@ -56,7 +61,7 @@
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.UserTest.PhoneTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9d4985be_002D0918_002D42d7_002Dbdd6_002Dd71c382efe7a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="AddToDictionaryTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9d4985be_002D0918_002D42d7_002Dbdd6_002Dd71c382efe7a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="AddToDictionaryTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.AddToDictionaryTest&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test3.GroupActionItemsTest&lt;/TestId&gt;
