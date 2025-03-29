@@ -1,4 +1,5 @@
-﻿using System.Reflection.Metadata;
+﻿using System.Collections;
+using System.Reflection.Metadata;
 using App.Practice2;
 
 namespace App;
@@ -43,9 +44,72 @@ public static class Extensions
     }
 }
 
+public class CustomClass
+{
+    public IEnumerable<int> Odd()
+    {
+        var i = 0;
+        while (true)
+        {
+            i++;
+            if (i % 2 != 0)
+            {
+                yield return i;
+            }
+        }
+    }
+
+    public IEnumerable<int> Even()
+    {
+        var i = 0;
+        while (true)
+        {
+            i++;
+            if (i % 2 == 0)
+            {
+                yield return i;
+            }
+        }
+    }
+}
+
+public static class StringExtensions
+{
+    public static IEnumerable<string> ToUpper(this IEnumerable<string> inputString)
+    {
+        foreach (var s in inputString)
+        {
+            yield return s.ToUpper();
+        }   
+    }
+
+    public static IEnumerable<string> AppendToEnd(this IEnumerable<string> inputString, string postfix)
+    {
+        foreach (var s in inputString)
+        {
+            yield return s + postfix;
+        }
+    }
+
+    public static IEnumerable<string> Reverse(this IEnumerable<string> inputString)
+    {
+        var reversed = new List<string>(inputString);
+        var length = reversed.Count;
+        for (var i = 0; i < length; i++)
+        {
+            yield return reversed[length - i - 1];
+        }
+    }
+}
+
 public static class Program
 {
     public static void Main()
     {
+        var c = new CustomClass();
+        foreach (var i in c.Even())
+        {
+            Console.WriteLine(i);
+        }
     }
 }
