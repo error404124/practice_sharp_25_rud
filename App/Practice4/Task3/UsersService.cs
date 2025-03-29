@@ -6,8 +6,9 @@ namespace App.Practice_4.Task3;
 public class UsersService : IUsersService
 {
     private List<User> users;
-    
-    public UsersService(){
+
+    public UsersService()
+    {
         users = new List<User>();
     }
 
