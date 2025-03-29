@@ -1,4 +1,5 @@
 ﻿using System.Reflection.Metadata;
+using App.Practice_4.Task3;
 using App.Practice2;
 
 namespace App;
@@ -24,6 +25,7 @@ public static class Extensions
         {
             return false;
         }
+
         var temStr = inputString.Replace(" ", "");
         for (var i = 0; i < temStr.Length / 2; i++)
         {
@@ -46,5 +48,6 @@ public static class Program
 {
     public static void Main()
     {
+        
     }
 }
