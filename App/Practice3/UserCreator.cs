@@ -8,7 +8,7 @@ public static class UserCreator
         return new User(login, passwordHash, name, surname, inn, phone);
     }
 
-    private static string CreateMd5(string password)
+    public static string CreateMd5(string password)
     {
         var md5 = System.Security.Cryptography.MD5.Create();
         var passwordBytes = System.Text.Encoding.ASCII.GetBytes(password);
