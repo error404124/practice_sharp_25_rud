@@ -1,5 +1,11 @@
 namespace Experiments;
 
+public enum ExpType
+{
+    CreateArray,
+    CallMethodWithArgument
+}
+
 public class Exp
 {
     public ChartData Times(
@@ -48,15 +54,17 @@ public class Exp
 
 public class Experiments
 {
-    public static ChartData BuildChartDataForArrayCreation(
-        IBenchmark benchmark, int repetitionsCount)
+    public static ChartData BuildChartData(
+        IBenchmark benchmark, int repetitionsCount, ExpType type)
     {
-        return new Exp().Times(repetitionsCount, benchmark, "Create array");
-    }
-
-    public static ChartData BuildChartDataForMethodCall(
-        IBenchmark benchmark, int repetitionsCount)
-    {
-        return new Exp().Times(repetitionsCount, benchmark, "Call method with argument");
+        switch (type)
+        {
+            case ExpType.CreateArray:
+                return new Exp().Times(repetitionsCount, benchmark, $"{type}");
+            case ExpType.CallMethodWithArgument:
+                return new Exp().Times(repetitionsCount, benchmark, $"{type}");
+            default:
+                throw new ArgumentException("wrong type");
+        }
     }
 }

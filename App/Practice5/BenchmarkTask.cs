@@ -26,24 +26,22 @@ public class Benchmark : IBenchmark
 
 public class StringBuilderTest : ITask
 {
-    private int repetitionCount;
-
     public int RepetitionCount
     {
-        get => repetitionCount;
-        set => repetitionCount = value;
+        get => RepetitionCount;
+        set => RepetitionCount = value;
     }
 
     public StringBuilderTest(int repetitionCount)
     {
-        this.repetitionCount = repetitionCount;
+        this.RepetitionCount = repetitionCount;
     }
 
     public void Run()
     {
         var sb = new StringBuilder();
 
-        for (var i = 0; i < repetitionCount; i++)
+        for (var i = 0; i < RepetitionCount; i++)
         {
             sb.Append('a');
         }
