@@ -24,6 +24,7 @@ public static class Extensions
         {
             return false;
         }
+
         var temStr = inputString.Replace(" ", "");
         for (var i = 0; i < temStr.Length / 2; i++)
         {
