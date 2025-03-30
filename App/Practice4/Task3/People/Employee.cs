@@ -2,12 +2,12 @@ using App.Practice3;
 
 namespace App.Practice_4.Task3;
 
-public class Employee: User
+public class Employee : User
 {
-    private List<Order> orders;
-    public List<Order> Orders { get => orders; set => orders = value; }
+    public List<Order> Orders { get; set; }
+
     public Employee()
     {
-        orders = new List<Order>();
+        Orders = new List<Order>();
     }
 }
