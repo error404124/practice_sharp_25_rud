@@ -5,11 +5,11 @@ namespace App.Practice3;
 public class User
 {
     private readonly Guid id;
-    private readonly string login;
-    private readonly string passwordHash;
-    private readonly string name;
-    private readonly string surname;
-    private readonly string inn;
+    private string login;
+    private string passwordHash;
+    private string name;
+    private string surname;
+    private string inn;
     private string phone;
     private readonly DateTime registerDate;
 
@@ -17,13 +17,13 @@ public class User
     public string Login
     {
         get { return login; }
-        init { login = value; }
+        set { login = value; }
     }
 
     public string PasswordHash
     {
         get { return passwordHash; }
-        init { passwordHash = value; }
+        set { passwordHash = value; }
     }
 
     public string Phone
@@ -45,26 +45,31 @@ public class User
     public string Inn
     {
         get { return inn; }
+        set {inn = value;}
     }
 
     public Guid Id
     {
         get { return id; }
+        init { id = value; }
     }
 
     public string Name
     {
         get { return name; }
+        set { name = value; }
     }
 
     public string Surname
     {
         get { return surname; }
+        set { surname = value; }
     }
 
     public DateTime RegisterDate
     {
-        get { return registerDate; }
+        get { return registerDate; }  
+        init { registerDate = value; }
     }
 
     public User(string login, string hash, string name, string surname, string inn, string phone)
