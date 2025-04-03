@@ -22,7 +22,7 @@ public class CartsService : ICartsService
         foreach (var key in ProductsService.UserInfo.Keys)
         {
             if (ProductsService.UserInfo[key].Id == cartId)
-            {
+            {  
                 return ProductsService.UserInfo[key];
             }
         }

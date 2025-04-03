@@ -46,7 +46,7 @@ public class ProductsService : IProductsService
         var result = new List<Product>();
         foreach (var product in Products)
         {
-            if (sellerId == product.Id)
+            if (sellerId == product.SellerId)
             {
                 result.Add(product);
             }
