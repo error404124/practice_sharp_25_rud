@@ -7,12 +7,7 @@
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ATimeSpan_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003F4962db4b15d7951593f324f483b8b739df8f2bae5f2fa9175b8bed8e773_003FTimeSpan_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2d70c6c0_002D7640_002D4ed5_002D99f8_002D6e3b4fe093d1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="DisplacementCacheTest2 #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test6.DisplacementCacheTest.DisplacementCacheTest2&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test6.DisplacementCacheTest.DisplacementCacheTest3&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test6.DisplacementCacheTest.DisplacementCacheTest4&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test6.DisplacementCacheTest.DisplacementCacheTest5&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test6.DisplacementCacheTest.DisplacementCacheTest6&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test6.DisplacementCacheTest.DisplacementCacheTest7&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B988E016-CA98-40CB-B971-46ECD2C0EEB3::net6.0::AppTests.Test6.DisplacementCacheTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=37a67eab_002D2ce1_002D45ae_002Da74f_002Dd142d87de3d7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetUserActionStatTest3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;

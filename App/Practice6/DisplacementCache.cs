@@ -35,7 +35,6 @@ public class DisplacementCache<T> : IDisplacementCache<T>
     }
     public IReadOnlyDictionary<string, T> GetAllCacheItems()
     {
-        CheckCache();
         var dictionary = new Dictionary<string, T>();
         foreach (var key in cache.Keys)
         {
@@ -52,18 +51,18 @@ public class DisplacementCache<T> : IDisplacementCache<T>
             throw new ArgumentException("key cannot be null");
         }
 
-        if (cache.ContainsKey(key))
-        {
-            orders.Remove(key);
-            orders.AddLast(key);
-        }
-
-        else if (cache.Count >= Capacity)
+        if (cache.Count >= Capacity)
         {
             CheckOrders();
             var oldestKey = orders.First.Value;
             orders.RemoveFirst();
             cache.Remove(oldestKey);
+        } 
+        
+        else if (cache.ContainsKey(key))
+        {
+            orders.Remove(key);
+            orders.AddLast(key);
         }
 
         cache[key] = (item, TimeService.GetNowTime());
