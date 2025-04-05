@@ -4,7 +4,7 @@ using Guid = System.Guid;
 
 namespace AppTests.Test6;
 
-public class ProducServiceTest
+public class ProductsServiceTest
 {
     [Test]
     public void ProductServiceTest1()
