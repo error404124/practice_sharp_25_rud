@@ -53,7 +53,6 @@ public class DisplacementCache<T> : IDisplacementCache<T>
 
         if (cache.Count >= Capacity)
         {
-            CheckOrders();
             var oldestKey = orders.First.Value;
             orders.RemoveFirst();
             cache.Remove(oldestKey);
