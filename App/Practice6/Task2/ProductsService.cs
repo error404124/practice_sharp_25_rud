@@ -2,22 +2,12 @@ using App.Practice_4.Task3;
 
 namespace App.Practice6;
 
-public readonly struct UserId
-{
-    public Guid Value { get; }
-
-    public UserId(Guid value)
-    {
-        Value = value;
-    }
-}
-
 public class ProductsService : IProductsService
 {
     public Dictionary<UserId, Cart> UserInfo = new Dictionary<UserId, Cart>();
     public List<Product> Products = new List<Product>();
 
-    private void ChekId(Guid id)
+    private void CheсkId(Guid id)
     {
         if (id == Guid.Empty)
         {
@@ -28,7 +18,7 @@ public class ProductsService : IProductsService
 
     public Result<Product> GetProduct(Guid productId)
     {
-        ChekId(productId);
+        CheсkId(productId);
         foreach (var product in Products)
         {
             if (productId == product.Id)
@@ -42,7 +32,7 @@ public class ProductsService : IProductsService
 
     public Result<List<Product>> GetSellerProducts(Guid sellerId)
     {
-        ChekId(sellerId);
+        CheсkId(sellerId);
         var result = new List<Product>();
         foreach (var product in Products)
         {
@@ -93,8 +83,8 @@ public class ProductsService : IProductsService
 
     public Result<VoidResult> AddProductToCart(Guid cartId, Guid productId)
     {
-        ChekId(cartId);
-        ChekId(productId);
+        CheсkId(cartId);
+        CheсkId(productId);
 
         var product = Products.FirstOrDefault(x => x.Id == productId);
         if (product == null)
