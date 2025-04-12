@@ -188,12 +188,6 @@ public static class Program
 {
     public static void Main()
     {
-        var str = "wedj0naks123 456789wlsa1x2z3";
-        var numbers = str.Where(x => x <= '9' && x >= '0').ToArray();
-        foreach (var number in numbers)
-        {
-            Console.WriteLine(number);
-        }
-        
+
     }
 }
