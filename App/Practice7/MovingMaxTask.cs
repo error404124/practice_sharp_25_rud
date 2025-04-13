@@ -4,7 +4,6 @@ public static class MovingMaxTask
 {
     public static IEnumerable<DataPoint> MovingMax(this IEnumerable<DataPoint> data, int windowWidth)
     {
-        var queue = new Queue<DataPoint>();
         var window = new Queue<double>();
         var result = new List<DataPoint>();
         
