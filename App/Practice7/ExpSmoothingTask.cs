@@ -8,7 +8,7 @@ public static class ExpSmoothingTask
     {
         var result = new List<DataPoint>();
         var s0 = data.First();
-        DataPoint x0 = s0.WithExpSmoothedY(s0.OriginalY);
+        var x0 = s0.WithExpSmoothedY(s0.OriginalY);
 
         foreach (var s in data)
         {

@@ -6,7 +6,7 @@ public static class MovingAverageTask
     {
         var queue = new Queue<DataPoint>();
         var result = new List<DataPoint>();
-        double sum = 0;
+        var sum = 0.0;
 
         foreach (var point in data)
         {
